@@ -2,7 +2,20 @@ import { io } from "socket.io-client";
 import { useEffect, createContext, useState, useRef } from "react";
 import Peer from "simple-peer";
 
-export const SocketContext = createContext();
+export const SocketContext = createContext({
+	call: null,
+	callAccepted: false,
+	myVideo: null,
+	userVideo: null,
+	stream: null,
+	name: "",
+	setName: () => {},
+	callEnded: false,
+	me: "",
+	callUser: () => {},
+	leaveCall: () => {},
+	answerCall: () => {},
+});
 
 const socket = io("http://localhost:5000");
 
@@ -67,8 +80,19 @@ export default function SocketContextProvider({ children }) {
 
 	return (
 		<SocketContext.Provider
-			//prettier-ignore
-			value={{call,callAccepted,myVideo,userVideo,stream,name,setName,callEnded,me,callUser,leaveCall,answerCall,
+			value={{
+				call,
+				callAccepted,
+				myVideo,
+				userVideo,
+				stream,
+				name,
+				setName,
+				callEnded,
+				me,
+				callUser,
+				leaveCall,
+				answerCall,
 			}}
 		>
 			{children}
