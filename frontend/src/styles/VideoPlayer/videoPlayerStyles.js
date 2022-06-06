@@ -8,7 +8,8 @@ export const VideoPlayerGridContainer = styled(Grid)(({ theme }) => ({
 }));
 
 export const Video = styled("video")(({ theme }) => ({
-	width: "550px",
+	width: "500px",
+	height: "300px",
 	[theme.breakpoints.down("sm")]: {
 		width: "330px",
 	},

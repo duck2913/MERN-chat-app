@@ -5,7 +5,7 @@ const Header = ({ children }) => {
 	return (
 		<Box
 			sx={{
-				width: "30%",
+				width: "25%",
 				borderRadius: "1rem",
 				display: "flex",
 				justifyContent: "center",

@@ -10,7 +10,7 @@ import { useContext } from "react";
 import { SocketContext } from "../../context/SocketContext";
 
 const VideoPlayer = () => {
-	const { myVideo, userVideo, stream, callAccepted, callEnded } = useContext(SocketContext);
+	const { myVideo, userVideo, stream, callAccepted, callEnded, name } = useContext(SocketContext);
 
 	return (
 		<VideoPlayerGridContainer container>
@@ -19,7 +19,7 @@ const VideoPlayer = () => {
 				<VideoPlayerPaper>
 					<Grid item xs={12} md={6}>
 						<Typography variant="body1" color="initial">
-							Name
+							{name || "Name"}
 						</Typography>
 						<Video playsInline muted ref={myVideo} autoPlay />
 					</Grid>
